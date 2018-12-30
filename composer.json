@@ -1,0 +1,18 @@
+{
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "files": [
+
+        ],
+        "psr-4": {
+            "Database\\": "Database/",
+            "Core\\": "Core/",
+            "App\\": "App/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.1"
+    }
+}
