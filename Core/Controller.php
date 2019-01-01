@@ -10,10 +10,20 @@ namespace Core;
 
 use Database\Database;
 
+/**
+ * Class Controller
+ * @package Core
+ */
 class Controller
 {
+    /**
+     * @var Database
+     */
     protected $db;
 
+    /**
+     * Controller constructor.
+     */
     public function __construct()
     {
         $this->db = Database::getInstance();

@@ -10,18 +10,31 @@ namespace App\Controllers;
 
 use Core\Controller;
 
+/**
+ * Class Home
+ * @package App\Controllers
+ */
 class Home extends Controller
 {
+    /**
+     * Home constructor.
+     */
     public function __construct()
     {
         parent::__construct();
     }
 
+    /**
+     * @param string $message
+     */
     public function index($message = '')
     {
         $this->view->render('view', $message);
     }
 
+    /**
+     * Sign in
+     */
     public function signin()
     {
         $username=filter_input(INPUT_POST,"username",FILTER_SANITIZE_STRING);
@@ -38,6 +51,9 @@ class Home extends Controller
         $this->index(['message' => $message]);
     }
 
+    /**
+     * Login
+     */
     public function login()
     {
         $username = filter_input(INPUT_POST,"username",FILTER_SANITIZE_STRING);
@@ -54,6 +70,9 @@ class Home extends Controller
         }
     }
 
+    /**
+     * Loged in user's dashboard
+     */
     public function dashboard()
     {
         if(!isset($_SESSION['logedin'])){
@@ -62,6 +81,9 @@ class Home extends Controller
         $this->view->render('dashboard');
     }
 
+    /**
+     * Logout
+     */
     public function logout(){
         session_unset();
         header('Location: '. DOMAIN);

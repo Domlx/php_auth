@@ -9,9 +9,17 @@
 namespace Core;
 
 
+/**
+ * Class View
+ * @package Core
+ */
 class View
 {
 
+    /**
+     * @param $name
+     * @param string $var
+     */
     public function render($name, $var = '')
     {
         if(is_array($var)) {
